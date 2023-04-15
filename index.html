@@ -5,26 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Finance Application</title>
 </head>
 <body>
-    <h1 id="bal">Balance: </h1>
+    <h1>Balance: <span id="bal">0</span></h1>
     <button id="add">Add Transaction</button>
-    <div id="userinput">
-        <form>
-            <label>Select the category</label>
-            <select form="userinput" required>
+    <br>
+    <div class="container">
+        <form id="form">
+            <select form="form" required>
                 <option>Activity</option>
                 <option>Eating</option>
                 <option>Transportation</option>
             </select>
             <br>
-            <label>Enter Amount</label>
-            <input type="number" required>
+            <label form="form">Enter Amount</label>
+            <input id="amou" type="number" form="form" required>
             <br>
-            <input id="conf" type="button" value="Confirm">
+            <input id="conf" type="submit" value="Confirm" form="form">
         </form>
     </div>
+    <p>test</p>
     <script src="main.js"></script>
 </body>
 </html>

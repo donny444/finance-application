@@ -1,8 +1,17 @@
 const add = document.getElementById("add");
-const form = document.getElementById("userinput");
+const form = document.getElementById("form");
 const conf = document.getElementById("conf");
-add.addEventListener("click", visibleForm = () => form.style.visibility = "visible");
-conf.addEventListener("click", hiddenForm = () => form.style.visibility = "hidden");
+const container = document.getElementsByClassName("container");
+add.addEventListener("click", () => form.style.display = "inline-block");
+conf.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let bal = parseFloat(document.getElementById("bal").textContent);
+    let amou = parseFloat(document.getElementById("amou").value);
+    bal += amou;
+    document.getElementById("bal").innerHTML = bal.toString();
+    form.style.display = "none";
+    form.reset();
+});
 
 /*
 function create() {
@@ -30,14 +39,6 @@ function create() {
 }
 */
 
-/*
-function balance(param) {
-    switch(param) {
-        case "income":
-            balance += income;
-            break;
-        case "outcome":
-            balance -= outcome;
-    }
+function calculate(param) {
+    bal.innerHTML = "Balance: " + param.toString();
 }
-*/
