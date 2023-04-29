@@ -2,17 +2,25 @@ const add = document.getElementById("add");
 const form = document.getElementById("form");
 const conf = document.getElementById("conf");
 const container = document.getElementsByClassName("container");
-add.addEventListener("click", () => form.style.display = "inline-block");
+add.addEventListener("click", () => form.style.visibility = "visible");
 conf.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    let recordDiv = docoument.createElement("div");
+    document.body.appendChild(recordDiv);
+    let recordP = document.createElement("p");
+    recordP.innerHTML = "Record";
+    recordDiv.appendChild(recordP);
+    recordDiv.setAttribute("class", "container");
+
     let bal = parseFloat(document.getElementById("bal").textContent);
     let amou = parseFloat(document.getElementById("amou").value);
     bal += amou;
+
     document.getElementById("bal").innerHTML = bal.toString();
-    form.style.display = "none";
+    form.style.visibility = "hidden";
     form.reset();
 });
-
 /*
 function create() {
     let createForm = document.createElement("form");
@@ -39,6 +47,17 @@ function create() {
 }
 */
 
-function calculate(param) {
-    bal.innerHTML = "Balance: " + param.toString();
+function create() {
+    let recordDiv = docoument.createElement("div");
+    document.body.appendChild(recordDiv);
+    let recordP = document.createElement("p");
+    recordP.innerHTML = "Record";
+    recordDiv.appendChild(recordP);
+    recordDiv.setAttribute("class", "container");
+}
+
+function calculate() {
+    let bal = parseFloat(document.getElementById("bal").textContent);
+    let amou = parseFloat(document.getElementById("amou").value);
+    bal += amou;
 }

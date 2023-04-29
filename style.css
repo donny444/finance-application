@@ -6,7 +6,8 @@ body {
     text-align: center;
     background-color: lightblue;
 }
-form {
+#form {
+    visibility: hidden;
     text-align: left;
 }
 #bal {
